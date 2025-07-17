@@ -1,6 +1,7 @@
 import deepl
 import os
 import re
+from config import DEEPL_API_KEY
 
 DEEPL_API_KEY = "5676e1dd-f5a2-489c-b994-ab8fa383bd4a:fx"
 
