@@ -14,11 +14,11 @@ if __name__ == "__main__":
         print(f"[!] Video file was not found: {VIDEO_PATH}")
         exit(1)
 
-    # video_to_subtitles.extract_audio(VIDEO_PATH, AUDIO_PATH)
+    video_to_subtitles.extract_audio(VIDEO_PATH, AUDIO_PATH)
     print(f"[10%] Audio extraction...")
-    # segments = video_to_subtitles.transcribe_audio(AUDIO_PATH)
+    segments = video_to_subtitles.transcribe_audio(AUDIO_PATH)
     print(f"[25%] Recognizing speech...")
-    # video_to_subtitles.save_ass_file(segments, ASS_OUTPUT)
+    video_to_subtitles.save_ass_file(segments, ASS_OUTPUT)
     print(f"[50%] The creation of the original text has been completed")
 
     translate.translate_ass_with_deepl(input_file, output_file)
