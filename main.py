@@ -2,7 +2,7 @@ import os
 import video_to_subtitles
 import translate
 
-VIDEO_PATH = ".\\video\\1_leak_version_Grand_Blue_Dreaming_Season_2_S02E07_480p_WEB_DL_AAC2.mp3"       # Замените на путь к вашему видео
+VIDEO_PATH = ".\\video\\1_leak_version_Grand_Blue_Dreaming_Season_2_S02E07_480p_WEB_DL_AAC2.mp3"       # Replace the path to your video
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 AUDIO_PATH = os.path.join(BASE_DIR, "audio.wav")
 ASS_OUTPUT = os.path.join(BASE_DIR, "subtitles.ass")
