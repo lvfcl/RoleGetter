@@ -7,7 +7,7 @@ translator = deepl.Translator(DEEPL_API_KEY)
 
 def translate_ass_with_deepl(input_path: str, output_path: str, target_lang="uk"):
     if not os.path.exists(input_path):
-        raise FileNotFoundError(f"Файл {input_path} не найден!")
+        raise FileNotFoundError(f"File {input_path} was not found!")
 
     with open(input_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
@@ -27,7 +27,7 @@ def translate_ass_with_deepl(input_path: str, output_path: str, target_lang="uk"
                 try:
                     translated_text = translator.translate_text(original_text, target_lang=target_lang).text
                 except Exception as e:
-                    print(f"[!] Ошибка перевода строки: {original_text} → {e}")
+                    print(f"[!] The error of the line translation: {original_text} → {e}")
                     translated_text = original_text
             else:
                 translated_text = original_text
