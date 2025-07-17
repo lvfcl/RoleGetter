@@ -26,7 +26,7 @@ def extract_audio(video_path: str, audio_path: str):
         raise FileNotFoundError(f"[!] The file was not created: {audio_path}")
 
 # ffmpeg works crookedly for me, and reinstalling Windows is a pain
-# I think that in the end this can be removed
+# I think in the end this can be removed
 def patch_ffmpeg():
     ffmpeg_path = r".\ffmpeg\bin\ffmpeg.exe"
     if not shutil.which("ffmpeg"):
