@@ -7,7 +7,6 @@ from datetime import timedelta
 # my GPU is not powerful enough for large models, so I use CPU 
 # you can chagne it
 
-# === Step 1: Audio extract from the video ===
 def extract_audio(video_path: str, audio_path: str):
     command = [
         r".\ffmpeg\bin\ffmpeg.exe",
@@ -35,7 +34,6 @@ def patch_ffmpeg():
     else:
         print("[INFO] ffmpeg found:", shutil.which("ffmpeg"))
 
-# === Step 2: Speech recognition with Whisper ===
 def transcribe_audio(audio_path: str):
     patch_ffmpeg()
     if not os.path.exists(audio_path):
@@ -44,7 +42,6 @@ def transcribe_audio(audio_path: str):
     result = model.transcribe(audio_path)
     return result["segments"]
 
-# === Step 3: Formatting time for .ass format ===
 def format_ass_time(seconds: float):
     t = timedelta(seconds=seconds)
     total_seconds = int(t.total_seconds())
@@ -54,7 +51,6 @@ def format_ass_time(seconds: float):
     milliseconds = int((t.total_seconds() - total_seconds) * 100)
     return f"{hours:d}:{minutes:02d}:{secs:02d}.{milliseconds:02d}"
 
-# === Step 4: Generation .ass file ===
 def save_ass_file(segments, filepath):
     header = """[Script Info]
 Title: Auto-generated Subtitles
